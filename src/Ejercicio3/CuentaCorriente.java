@@ -1,5 +1,7 @@
 package Ejercicio3;
 
+import javax.swing.*;
+
 public class CuentaCorriente extends CuentaBase {
     private double limiteSobregiro;
 
@@ -12,9 +14,11 @@ public class CuentaCorriente extends CuentaBase {
     public void retirar(double cantidad) {
         if (cantidad > 0 && (saldo + limiteSobregiro) >= cantidad) {
             saldo -= cantidad;
-            System.out.println("Retiro de " + cantidad + " realizado. Saldo actual: " + saldo);
+            JOptionPane.showMessageDialog(null,"Retiro de " + cantidad + " realizado. Saldo actual: " + saldo);
+
         } else {
-            System.out.println("No se puede retirar una cantidad negativa o superior al saldo disponible (incluyendo el límite de sobregiro).");
+        JOptionPane.showMessageDialog(null,"No se puede retirar una cantidad negativa o superior al saldo disponible (incluyendo el límite de sobregiro).");
+
         }
     }
 }

@@ -1,5 +1,7 @@
 package Ejercicio3;
 
+import javax.swing.*;
+
 public abstract class CuentaBase implements CuentaBancaria {
     protected double saldo;
 
@@ -11,9 +13,11 @@ public abstract class CuentaBase implements CuentaBancaria {
     public void depositar(double cantidad) {
         if (cantidad > 0) {
             saldo += cantidad;
-            System.out.println("Depósito de " + cantidad + " realizado. Saldo actual: " + saldo);
+            JOptionPane.showMessageDialog(null,"Depósito de " + cantidad + " realizado. Saldo actual: " + saldo);
+
         } else {
-            System.out.println("No se puede depositar una cantidad negativa.");
+            JOptionPane.showMessageDialog(null,"No se puede depositar una cantidad negativa.");
+
         }
     }
 
@@ -21,9 +25,10 @@ public abstract class CuentaBase implements CuentaBancaria {
     public void retirar(double cantidad) {
         if (cantidad > 0 && cantidad <= saldo) {
             saldo -= cantidad;
-            System.out.println("Retiro de " + cantidad + " realizado. Saldo actual: " + saldo);
-        } else {
-            System.out.println("No se puede retirar una cantidad negativa o superior al saldo.");
+            JOptionPane.showMessageDialog(null,"Retiro de " + cantidad + " realizado. Saldo actual: " + saldo);
+                    } else {
+            JOptionPane.showMessageDialog(null,"No se puede retirar una cantidad negativa o superior al saldo.");
+
         }
     }
 

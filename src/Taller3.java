@@ -6,6 +6,7 @@ import Ejercicio2.NotificacionPush;
 import Ejercicio3.CuentaAhorro;
 import Ejercicio3.CuentaCorriente;
 import Ejercicio3.GestionCuentas;
+import Ejercicio4.JuegoCartas;
 
 import javax.swing.*;
 import java.util.Optional;
@@ -62,13 +63,22 @@ public class Taller3 {
 
                 }while (!opcionC.equals("terminar"));
 
-                CuentaAhorro cuentaAhorro = new CuentaAhorro(1000000);
-
-
-                cuentaAhorro.depositar(5000);
-                cuentaAhorro.retirar(200000);
-
-
+                break;
+            case "4":
+                String opcionJ="";
+                do{
+                    opcionJ=JOptionPane.showInputDialog("Ingrese la opcion del tipo de juego de cartas\n" +
+                            "1. Poker.\n" +
+                            "2. Naipe Español.");
+                    switch (opcionJ){
+                        case "1":
+                            JuegoCartas.jugarPoker();
+                            break;
+                        case "2":
+                            JuegoCartas.jugarNaipe();
+                            break;
+                    }
+                }while (!opcionJ.equals("terminar"));
 
                 break;
 
@@ -81,9 +91,8 @@ public class Taller3 {
     private static String listaMenu(){
         return "\n1. Figuras Geometricas" +
                "\n2. Sistema de Notificaciones" +
-               "\n3. Cuentas de Bancos";
-
-
+               "\n3. Cuentas de Bancos"+
+               "\n4. Juego de Cartas";
     }
 
 }
